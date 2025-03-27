@@ -19,11 +19,6 @@
   "devDependencies": {
     "turbo": "^2.4.4",
     "typescript": "catalog:",
-    "vitest": "catalog:",
-    "@testing-library/react": "catalog:",
-    "@testing-library/user-event": "catalog:",
-    "@testing-library/jest-dom": "catalog:",
-    "jsdom": "catalog:",
-    "@saju/eslint-config": "workspace:*"
+    "vitest": "catalog:"
   }
 }
