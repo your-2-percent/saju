@@ -93,6 +93,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.3.4(vite@6.2.3(@types/node@22.13.0))
+      eslint:
+        specifier: 'catalog:'
+        version: 8.57.1
       globals:
         specifier: ^16.0.0
         version: 16.0.0

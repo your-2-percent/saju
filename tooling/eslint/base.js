@@ -74,7 +74,10 @@ module.exports = tseslint.config(
         },
       ],
       '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/no-var-requires': 'warn',
+      '@typescript-eslint/no-var-requires': [
+        'error',
+        { allow: ['eslint.config.js'] }
+      ],
       '@typescript-eslint/no-require-imports': [
         'error',
         { allow: ['eslint.config.js'] }
