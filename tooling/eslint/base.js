@@ -3,13 +3,13 @@
 const eslint = require('@eslint/js');
 const tseslint = require('typescript-eslint');
 const importPlugin = require('eslint-plugin-import');
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+const prettier = require('eslint-plugin-prettier');
 const unicorn = require('eslint-plugin-unicorn');
 const unusedImports = require('eslint-plugin-unused-imports');
 
 module.exports = tseslint.config(
   {
-    ignores: ['**/.vitepress/', '**/dist/', '**/esm/', '**/.next/', '**/.next-local/', '.pnp.*', '.yarn/'],
+    ignores: ['**/.vitepress/', '**/dist/', '**/esm/'],
   },
   eslint.configs.recommended,
   {
@@ -35,7 +35,6 @@ module.exports = tseslint.config(
       ],
       curly: ['error', 'all'],
       eqeqeq: ['error', 'always', { null: 'ignore' }],
-      // TypeScript에서 이미 잡고 있는 문제이기 때문에 + location, document 등의 global variable도 잡아서
       'no-undef': 'off',
     },
   },
@@ -76,6 +75,10 @@ module.exports = tseslint.config(
       ],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-var-requires': 'warn',
+      '@typescript-eslint/no-require-imports': [
+        'error',
+        { allow: ['eslint.config.js'] }
+      ],
       '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
       '@typescript-eslint/no-inferrable-types': 'warn',
       '@typescript-eslint/no-empty-function': 'off',
@@ -123,5 +126,19 @@ module.exports = tseslint.config(
       ],
     },
   },
-  eslintPluginPrettierRecommended
+  {
+    plugins: { prettier },
+    rules: {
+      'prettier/prettier': [
+        'error',
+        {
+          singleQuote: true,
+          trailingComma: 'es5',
+          printWidth: 120,
+          tabWidth: 2,
+          semi: true,
+        },
+      ],
+    },
+  }
 );

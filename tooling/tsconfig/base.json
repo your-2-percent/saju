@@ -21,8 +21,7 @@
     "inlineSources": true,
     "removeComments": false,
     "sourceMap": true,
-    "allowJs": false,
-    "skipLibCheck": true
+    "allowJs": false
   },
   "exclude": ["**/dist/*"]
 }
