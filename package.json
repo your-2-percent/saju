@@ -5,8 +5,8 @@
   "workspaces": [
     "packages/*",
     "apps/*",
-    "shared/*",
-    "tooling/*"
+    "tooling/*",
+    "shared"
   ],
   "scripts": {
     "build": "turbo run build",
