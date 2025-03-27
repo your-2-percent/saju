@@ -31,6 +31,7 @@
     "typescript": "catalog:",
     "vitest": "catalog:",
     "@saju/tsconfig": "workspace:*",
-    "@saju/eslint-config": "workspace:*"
+    "@saju/eslint-config": "workspace:*",
+    "eslint": "catalog:"
   }
 }
