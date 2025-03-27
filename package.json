@@ -1,0 +1,29 @@
+{
+  "name": "saju",
+  "private": true,
+  "packageManager": "pnpm@10.6.5",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "shared/*",
+    "tooling/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.4",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "jsdom": "catalog:",
+    "@saju/eslint-config": "workspace:*"
+  }
+}

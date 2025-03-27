@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+
+    /* type checking */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    /* languages and environments */
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "ESNext", "ESNext.AsyncIterable"],
+    "target": "ESNext",
+
+    /* interop constraints */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* emit */
+    "declaration": true,
+    "downlevelIteration": true,
+    "inlineSources": true,
+    "removeComments": false,
+    "sourceMap": true,
+
+    /* completeness */
+    "allowJs": false,
+    "skipLibCheck": true
+  },
+  "exclude": ["**/dist/*"]
+}
