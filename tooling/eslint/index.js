@@ -1,13 +1,11 @@
-/* eslint-env es6 */
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import importPlugin from 'eslint-plugin-import';
+import prettier from 'eslint-plugin-prettier';
+import unicorn from 'eslint-plugin-unicorn';
+import unusedImports from 'eslint-plugin-unused-imports';
 
-const eslint = require('@eslint/js');
-const tseslint = require('typescript-eslint');
-const importPlugin = require('eslint-plugin-import');
-const prettier = require('eslint-plugin-prettier');
-const unicorn = require('eslint-plugin-unicorn');
-const unusedImports = require('eslint-plugin-unused-imports');
-
-module.exports = tseslint.config(
+export const baseConfig = tseslint.config(
   {
     ignores: ['**/.vitepress/', '**/dist/', '**/esm/'],
   },
@@ -76,11 +74,15 @@ module.exports = tseslint.config(
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-var-requires': [
         'error',
-        { allow: ['eslint.config.js'] }
+        {
+          allow: ['@saju/eslint-config'],
+        },
       ],
-      '@typescript-eslint/no-require-imports': [
+      '@typescript-eslint/no-require-imports':  [
         'error',
-        { allow: ['eslint.config.js'] }
+        {
+          allow: ['@saju/eslint-config'],
+        },
       ],
       '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
       '@typescript-eslint/no-inferrable-types': 'warn',

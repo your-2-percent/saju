@@ -1,10 +1,7 @@
+import { tsupConfig } from '@saju/configs';
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
+  ...tsupConfig,
   format: ['esm'],
-  entry: ['src/index.ts'],
-  splitting: true,
-  minify: true,
-  dts: true,
-  clean: true,
 });

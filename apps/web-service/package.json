@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "test": "vitest",
+    "test": "vitest run",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --fix"
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@saju/eslint-config": "workspace:*",
     "@saju/tsconfig": "workspace:*",
+    "@saju/configs": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",

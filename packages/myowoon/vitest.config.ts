@@ -1,13 +1,10 @@
+import { vitestConfig } from '@saju/configs';
 import { defineConfig } from 'vitest/config';
+import packageJson from './package.json';
 
 export default defineConfig({
   test: {
-    globals: true,
-    environment: 'node',
-    include: ['src/**/*.spec.ts'],
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json'],
-    },
+    ...vitestConfig.test,
+    name: packageJson.name,
   },
 });

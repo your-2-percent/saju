@@ -1,12 +1,14 @@
 {
   "name": "@saju/eslint-config",
   "private": true,
+  "type": "module",
   "exports": {
-    "./base": "./base.js"
+    ".": {
+      "import": "./index.js"
+    }
   },
   "dependencies": {
     "@eslint/js": "catalog:",
-    "eslint": "catalog:",
     "eslint-config-prettier": "catalog:",
     "eslint-plugin-import": "catalog:",
     "eslint-plugin-prettier": "catalog:",

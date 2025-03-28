@@ -1,22 +1,21 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite';
+import { vitestConfig } from '@saju/configs';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import packageJson from './package.json';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
+    open: true,
   },
   test: {
-    globals: true,
+    ...vitestConfig.test,
+    name: packageJson.name,
     environment: 'jsdom',
     include: ['src/**/*.spec.{ts,tsx}'],
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json'],
-    },
     setupFiles: ['./vitest.setup.ts'],
   },
 });

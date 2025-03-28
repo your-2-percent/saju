@@ -5,8 +5,7 @@
   "workspaces": [
     "packages/*",
     "apps/*",
-    "tooling/*",
-    "shared"
+    "tooling/*"
   ],
   "scripts": {
     "build": "turbo run build",
@@ -14,11 +13,10 @@
     "typecheck": "turbo run typecheck",
     "clean": "turbo run clean && rm -rf node_modules",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "test:attw": "turbo run test:attw"
   },
   "devDependencies": {
-    "turbo": "^2.4.4",
-    "typescript": "catalog:",
-    "vitest": "catalog:"
+    "turbo": "^2.4.4"
   }
 }

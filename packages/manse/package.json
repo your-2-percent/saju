@@ -1,37 +1,44 @@
 {
   "name": "@saju/manse",
   "version": "0.1.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
       }
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "pnpm build --watch",
     "build": "tsup",
     "lint": "eslint src --fix",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:attw": "attw --pack",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "catalog:",
+    "@saju/configs": "workspace:*",
+    "@saju/eslint-config": "workspace:*",
+    "@saju/tsconfig": "workspace:*",
     "@types/node": "catalog:",
+    "eslint": "catalog:",
     "tsup": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:",
-    "@saju/tsconfig": "workspace:*",
-    "@saju/eslint-config": "workspace:*",
-    "eslint": "catalog:"
+    "vitest": "catalog:"
   }
 }
